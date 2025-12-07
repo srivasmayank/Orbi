@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mern-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mern-backend
+  template:
+    metadata:
+      labels:
+        app: mern-backend
+    spec:
+      containers:
+        - name: mern-backend
+          image: mayansrivas/mern-backend:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "5000"
+            - name: MONGO_URI
+              value: "mongodb+srv://abhhhiiizzz007:abhiabhi@chatting.kuxsnpd.mongodb.net/?retryWrites=true&w=majority&appName=chatting"  # Update database name as needed
+            - name: REDIS_HOST
+              value: "redis"
+            - name: JWT_SECRET
+              value: "123"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mern-backend
+spec:
+  selector:
+    app: mern-backend
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

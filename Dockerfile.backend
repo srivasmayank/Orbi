@@ -1,0 +1,25 @@
+# Use a lightweight Node.js image
+FROM node:18-alpine
+
+# Set working directory in container
+WORKDIR /app
+
+# Copy the backend package.json files from the root
+COPY package*.json ./
+
+# Install backend dependencies
+RUN npm install
+
+# Copy only the backend folder (which contains your server code) ddd
+
+
+COPY backend ./backend
+
+# Change working directory to the backend folder
+WORKDIR /app/backend
+
+# Expose the backend port (adjust if needed)
+EXPOSE 5000
+
+# Start the backend server
+CMD ["node", "server.js"]

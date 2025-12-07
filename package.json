@@ -1,0 +1,30 @@
+{
+  "name": "mern-chatapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js",
+    "server": "nodemon backend/server.js",
+    "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"
+  },
+  "author": "Abhirup Dandapat",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "connect-redis": "^7.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "express-session": "^1.18.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^6.8.0",
+    "mongoose": "^5.12.9",
+    "nodemon": "^3.1.4",
+    "rate-limiter-flexible": "^5.0.3",
+    "socket.io": "^4.1.2"
+  }
+}

@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: mern-backend
+    env: docker
+    dockerfilePath: ./Dockerfile.backend
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: "production"
+      - key: PORT
+        value: "5000"
+      - key: REDIS_HOST
+        value: "mern-redis"   # This should match the redis service name below
+    envFilePath: .env
+    ports:
+      - 5000
+
+  - type: web
+    name: mern-frontend
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile   # Ensure your frontend Dockerfile is at this location
+    plan: free
+    ports:
+      - 80
+
+  - type: service
+    name: mern-redis
+    env: docker
+    image: redis:alpine
+    plan: free
+    ports:
+      - 6379
