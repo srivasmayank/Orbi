@@ -1,10 +1,8 @@
 OrbiChat App
 
-![image](https://github.com/user-attachments/assets/09a2ba9e-162b-4ad6-b861-b4fe1a549007)
 
 
-The Quick Chat App allows us to share text,images,video and document. This app also allows us to video call one on one for efficient communication.
-
+The OrbiChat App allows us to share text,images,video and document. This app also allows us to video call one on one for efficient communication.
 
 
 
