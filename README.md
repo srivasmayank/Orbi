@@ -1,4 +1,4 @@
-Quick Chat App
+OrbiChat App
 
 ![image](https://github.com/user-attachments/assets/09a2ba9e-162b-4ad6-b861-b4fe1a549007)
 
